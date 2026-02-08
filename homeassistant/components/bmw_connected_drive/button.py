@@ -16,7 +16,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from . import DOMAIN as BMW_DOMAIN, BMWConfigEntry
+from . import DOMAIN, BMWConfigEntry
 from .entity import BMWBaseEntity
 
 if TYPE_CHECKING:
@@ -40,7 +40,9 @@ BUTTON_TYPES: tuple[BMWButtonEntityDescription, ...] = (
     BMWButtonEntityDescription(
         key="light_flash",
         translation_key="light_flash",
-        remote_function=lambda vehicle: vehicle.remote_services.trigger_remote_light_flash(),
+        remote_function=lambda vehicle: (
+            vehicle.remote_services.trigger_remote_light_flash()
+        ),
     ),
     BMWButtonEntityDescription(
         key="sound_horn",
@@ -50,18 +52,24 @@ BUTTON_TYPES: tuple[BMWButtonEntityDescription, ...] = (
     BMWButtonEntityDescription(
         key="activate_air_conditioning",
         translation_key="activate_air_conditioning",
-        remote_function=lambda vehicle: vehicle.remote_services.trigger_remote_air_conditioning(),
+        remote_function=lambda vehicle: (
+            vehicle.remote_services.trigger_remote_air_conditioning()
+        ),
     ),
     BMWButtonEntityDescription(
         key="deactivate_air_conditioning",
         translation_key="deactivate_air_conditioning",
-        remote_function=lambda vehicle: vehicle.remote_services.trigger_remote_air_conditioning_stop(),
+        remote_function=lambda vehicle: (
+            vehicle.remote_services.trigger_remote_air_conditioning_stop()
+        ),
         is_available=lambda vehicle: vehicle.is_remote_climate_stop_enabled,
     ),
     BMWButtonEntityDescription(
         key="find_vehicle",
         translation_key="find_vehicle",
-        remote_function=lambda vehicle: vehicle.remote_services.trigger_remote_vehicle_finder(),
+        remote_function=lambda vehicle: (
+            vehicle.remote_services.trigger_remote_vehicle_finder()
+        ),
     ),
 )
 
@@ -111,7 +119,7 @@ class BMWButton(BMWBaseEntity, ButtonEntity):
             await self.entity_description.remote_function(self.vehicle)
         except MyBMWAPIError as ex:
             raise HomeAssistantError(
-                translation_domain=BMW_DOMAIN,
+                translation_domain=DOMAIN,
                 translation_key="remote_service_error",
                 translation_placeholders={"exception": str(ex)},
             ) from ex

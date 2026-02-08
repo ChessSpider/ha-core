@@ -1,6 +1,6 @@
 """Provides button entities for Home Connect."""
 
-from aiohomeconnect.model import CommandKey, EventKey
+from aiohomeconnect.model import CommandKey
 from aiohomeconnect.model.error import HomeConnectError
 
 from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
@@ -73,6 +73,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up the Home Connect button entities."""
     setup_home_connect_entry(
+        hass,
         entry,
         _get_entities_for_appliance,
         async_add_entities,
@@ -94,15 +95,9 @@ class HomeConnectButtonEntity(HomeConnectEntity, ButtonEntity):
         super().__init__(
             coordinator,
             appliance,
-            # The entity is subscribed to the appliance connected event,
-            # but it will receive also the disconnected event
-            ButtonEntityDescription(
-                key=EventKey.BSH_COMMON_APPLIANCE_CONNECTED,
-            ),
+            desc,
+            (appliance.info.ha_id,),
         )
-        self.entity_description = desc
-        self.appliance = appliance
-        self.unique_id = f"{appliance.info.ha_id}-{desc.key}"
 
     def update_native_value(self) -> None:
         """Set the value of the entity."""

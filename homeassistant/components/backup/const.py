@@ -16,8 +16,8 @@ DATA_MANAGER: HassKey[BackupManager] = HassKey(DOMAIN)
 LOGGER = getLogger(__package__)
 
 EXCLUDE_FROM_BACKUP = [
-    "__pycache__/*",
-    ".DS_Store",
+    "**/__pycache__/*",
+    "**/.DS_Store",
     ".HA_RESTORE",
     "*.db-shm",
     "*.log.*",
@@ -26,6 +26,7 @@ EXCLUDE_FROM_BACKUP = [
     "tmp_backups/*.tar",
     "OZW_Log.txt",
     "tts/*",
+    ".cache/*",
 ]
 
 EXCLUDE_DATABASE_FROM_BACKUP = [

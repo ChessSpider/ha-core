@@ -27,7 +27,7 @@ from homeassistant.components.flexit_bacnet.const import PRESET_TO_VENTILATION_M
 from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers import entity_component, entity_registry as er
 
 from . import setup_with_selected_platforms
 
@@ -59,6 +59,7 @@ async def test_set_hvac_preset_mode(
 
     # Set preset mode to away
     mock_flexit_bacnet.ventilation_mode = VENTILATION_MODE_AWAY
+    mock_flexit_bacnet.operation_mode = 2  # OPERATION_MODE_AWAY
     await hass.services.async_call(
         Platform.CLIMATE,
         SERVICE_SET_PRESET_MODE,
@@ -78,6 +79,7 @@ async def test_set_hvac_preset_mode(
 
     # Set preset mode to home
     mock_flexit_bacnet.ventilation_mode = VENTILATION_MODE_HOME
+    mock_flexit_bacnet.operation_mode = 3  # OPERATION_MODE_HOME
     await hass.services.async_call(
         Platform.CLIMATE,
         SERVICE_SET_PRESET_MODE,
@@ -121,6 +123,7 @@ async def test_set_hvac_mode(
     await setup_with_selected_platforms(hass, mock_config_entry, [Platform.CLIMATE])
 
     mock_flexit_bacnet.ventilation_mode = VENTILATION_MODE_STOP
+    mock_flexit_bacnet.operation_mode = 1  # OPERATION_MODE_OFF
     await hass.services.async_call(
         Platform.CLIMATE,
         SERVICE_SET_HVAC_MODE,
@@ -156,14 +159,14 @@ async def test_hvac_action(
 
     # Simulate electric heater being ON
     mock_flexit_bacnet.electric_heater = True
-    await hass.helpers.entity_component.async_update_entity(ENTITY_ID)
+    await entity_component.async_update_entity(hass, ENTITY_ID)
 
     state = hass.states.get(ENTITY_ID)
     assert state.attributes[ATTR_HVAC_ACTION] == HVACAction.HEATING
 
     # Simulate electric heater being OFF
     mock_flexit_bacnet.electric_heater = False
-    await hass.helpers.entity_component.async_update_entity(ENTITY_ID)
+    await entity_component.async_update_entity(hass, ENTITY_ID)
 
     state = hass.states.get(ENTITY_ID)
     assert state.attributes[ATTR_HVAC_ACTION] == HVACAction.FAN

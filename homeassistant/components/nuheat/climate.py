@@ -130,7 +130,7 @@ class NuHeatThermostat(CoordinatorEntity, ClimateEntity):
         return HVACAction.HEATING if self._thermostat.heating else HVACAction.IDLE
 
     @property
-    def min_temp(self):
+    def min_temp(self) -> float:
         """Return the minimum supported temperature for the thermostat."""
         if self._temperature_unit == "C":
             return self._thermostat.min_celsius
@@ -138,7 +138,7 @@ class NuHeatThermostat(CoordinatorEntity, ClimateEntity):
         return self._thermostat.min_fahrenheit
 
     @property
-    def max_temp(self):
+    def max_temp(self) -> float:
         """Return the maximum supported temperature for the thermostat."""
         if self._temperature_unit == "C":
             return self._thermostat.max_celsius
@@ -154,7 +154,7 @@ class NuHeatThermostat(CoordinatorEntity, ClimateEntity):
         return nuheat_to_fahrenheit(self._target_temperature)
 
     @property
-    def preset_mode(self):
+    def preset_mode(self) -> str:
         """Return current preset mode."""
         return SCHEDULE_MODE_TO_PRESET_MODE_MAP.get(self._schedule_mode, PRESET_RUN)
 

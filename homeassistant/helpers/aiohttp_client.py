@@ -28,6 +28,7 @@ from homeassistant.util.json import json_loads
 
 from .frame import warn_use
 from .json import json_dumps
+from .singleton import singleton
 
 if TYPE_CHECKING:
     from aiohttp.typedefs import JSONDecoder
@@ -39,19 +40,12 @@ DATA_CONNECTOR: HassKey[dict[tuple[bool, int, str], aiohttp.BaseConnector]] = Ha
 DATA_CLIENTSESSION: HassKey[dict[tuple[bool, int, str], aiohttp.ClientSession]] = (
     HassKey("aiohttp_clientsession")
 )
+DATA_RESOLVER: HassKey[HassAsyncDNSResolver] = HassKey("aiohttp_resolver")
 
 SERVER_SOFTWARE = (
     f"{APPLICATION_NAME}/{__version__} "
     f"aiohttp/{aiohttp.__version__} Python/{sys.version_info[0]}.{sys.version_info[1]}"
 )
-
-ENABLE_CLEANUP_CLOSED = (3, 13, 0) <= sys.version_info < (
-    3,
-    13,
-    1,
-) or sys.version_info < (3, 12, 7)
-# Cleanup closed is no longer needed after https://github.com/python/cpython/pull/118960
-# which first appeared in Python 3.12.7 and 3.13.1
 
 WARN_CLOSE_MSG = "closes the Home Assistant aiohttp session"
 
@@ -68,6 +62,21 @@ WARN_CLOSE_MSG = "closes the Home Assistant aiohttp session"
 #
 MAXIMUM_CONNECTIONS = 4096
 MAXIMUM_CONNECTIONS_PER_HOST = 100
+
+
+class HassAsyncDNSResolver(AsyncDualMDNSResolver):
+    """Home Assistant AsyncDNSResolver.
+
+    This is a wrapper around the AsyncDualMDNSResolver to only
+    close the resolver when the Home Assistant instance is closed.
+    """
+
+    async def real_close(self) -> None:
+        """Close the resolver."""
+        await super().close()
+
+    async def close(self) -> None:
+        """Close the resolver."""
 
 
 class HassClientResponse(aiohttp.ClientResponse):
@@ -353,17 +362,20 @@ def _async_get_connector(
         return connectors[connector_key]
 
     if verify_ssl:
-        ssl_context: SSLContext = ssl_util.client_context(ssl_cipher)
+        ssl_context: SSLContext = ssl_util.client_context(
+            ssl_cipher, ssl_util.SSL_ALPN_HTTP11
+        )
     else:
-        ssl_context = ssl_util.client_context_no_verify(ssl_cipher)
+        ssl_context = ssl_util.client_context_no_verify(
+            ssl_cipher, ssl_util.SSL_ALPN_HTTP11
+        )
 
     connector = HomeAssistantTCPConnector(
         family=family,
-        enable_cleanup_closed=ENABLE_CLEANUP_CLOSED,
         ssl=ssl_context,
         limit=MAXIMUM_CONNECTIONS,
         limit_per_host=MAXIMUM_CONNECTIONS_PER_HOST,
-        resolver=_async_make_resolver(hass),
+        resolver=_async_get_or_create_resolver(hass),
     )
     connectors[connector_key] = connector
 
@@ -376,6 +388,19 @@ def _async_get_connector(
     return connector
 
 
+@singleton(DATA_RESOLVER)
 @callback
-def _async_make_resolver(hass: HomeAssistant) -> AsyncDualMDNSResolver:
-    return AsyncDualMDNSResolver(async_zeroconf=zeroconf.async_get_async_zeroconf(hass))
+def _async_get_or_create_resolver(hass: HomeAssistant) -> HassAsyncDNSResolver:
+    """Return the HassAsyncDNSResolver."""
+    resolver = _async_make_resolver(hass)
+
+    async def _async_close_resolver(event: Event) -> None:
+        await resolver.real_close()
+
+    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_resolver)
+    return resolver
+
+
+@callback
+def _async_make_resolver(hass: HomeAssistant) -> HassAsyncDNSResolver:
+    return HassAsyncDNSResolver(async_zeroconf=zeroconf.async_get_async_zeroconf(hass))

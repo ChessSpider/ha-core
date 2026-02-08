@@ -1,4 +1,240 @@
 # serializer version: 1
+# name: test_number_snapshot[number.test_number_button_brightness_active-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_button_brightness_active',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Button brightness (active)',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Button brightness (active)',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'button_brightness_active',
+    'unique_id': '00055511EECC-1-22',
+    'unit_of_measurement': '%',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_button_brightness_active-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number Button brightness (active)',
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+      'unit_of_measurement': '%',
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_button_brightness_active',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '100.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_button_brightness_dimmed-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_button_brightness_dimmed',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Button brightness (dimmed)',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Button brightness (dimmed)',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'button_brightness_dimmed',
+    'unique_id': '00055511EECC-1-23',
+    'unit_of_measurement': '%',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_button_brightness_dimmed-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number Button brightness (dimmed)',
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+      'unit_of_measurement': '%',
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_button_brightness_dimmed',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '23.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_display_brightness_active-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_display_brightness_active',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Display brightness (active)',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Display brightness (active)',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'display_brightness_active',
+    'unique_id': '00055511EECC-1-20',
+    'unit_of_measurement': '%',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_display_brightness_active-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number Display brightness (active)',
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+      'unit_of_measurement': '%',
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_display_brightness_active',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '78.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_display_brightness_dimmed-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_display_brightness_dimmed',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Display brightness (dimmed)',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Display brightness (dimmed)',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'display_brightness_dimmed',
+    'unique_id': '00055511EECC-1-21',
+    'unit_of_measurement': '%',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_display_brightness_dimmed-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number Display brightness (dimmed)',
+      'max': 100,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+      'unit_of_measurement': '%',
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_display_brightness_dimmed',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '23.0',
+  })
+# ---
 # name: test_number_snapshot[number.test_number_down_movement_duration-entry]
   EntityRegistryEntrySnapshot({
     'aliases': set({
@@ -25,6 +261,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Down-movement duration',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -32,9 +269,10 @@
     'original_name': 'Down-movement duration',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'down_time',
-    'unique_id': '00055511EECC-1-4',
+    'unique_id': '00055511EECC-1-3',
     'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
   })
 # ---
@@ -54,7 +292,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '57',
+    'state': '57.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_down_position-entry]
@@ -83,6 +321,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Down position',
     'options': dict({
     }),
     'original_device_class': None,
@@ -90,9 +329,10 @@
     'original_name': 'Down position',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'down_position',
-    'unique_id': '00055511EECC-1-2',
+    'unique_id': '00055511EECC-1-1',
     'unit_of_measurement': '%',
   })
 # ---
@@ -111,7 +351,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '100',
+    'state': '100.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_down_slat_position-entry]
@@ -140,6 +380,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Down slat position',
     'options': dict({
     }),
     'original_device_class': None,
@@ -147,9 +388,10 @@
     'original_name': 'Down slat position',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'down_slat_position',
-    'unique_id': '00055511EECC-1-3',
+    'unique_id': '00055511EECC-1-2',
     'unit_of_measurement': '°',
   })
 # ---
@@ -168,7 +410,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '38',
+    'state': '38.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_end_position-entry]
@@ -197,6 +439,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'End position',
     'options': dict({
     }),
     'original_device_class': None,
@@ -204,9 +447,10 @@
     'original_name': 'End position',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'endposition_configuration',
-    'unique_id': '00055511EECC-1-5',
+    'unique_id': '00055511EECC-1-4',
     'unit_of_measurement': None,
   })
 # ---
@@ -224,7 +468,125 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '129',
+    'state': '129.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_external_temperature_offset-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 6,
+      'min': -6,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 0.1,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_external_temperature_offset',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'External temperature offset',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'External temperature offset',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'external_temperature_offset',
+    'unique_id': '00055511EECC-1-17',
+    'unit_of_measurement': <UnitOfTemperature.CELSIUS: '°C'>,
+  })
+# ---
+# name: test_number_snapshot[number.test_number_external_temperature_offset-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number External temperature offset',
+      'max': 6,
+      'min': -6,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 0.1,
+      'unit_of_measurement': <UnitOfTemperature.CELSIUS: '°C'>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_external_temperature_offset',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '0.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_floor_temperature_offset-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 6,
+      'min': -6,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 0.1,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_floor_temperature_offset',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Floor temperature offset',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Floor temperature offset',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'floor_temperature_offset',
+    'unique_id': '00055511EECC-1-18',
+    'unit_of_measurement': <UnitOfTemperature.CELSIUS: '°C'>,
+  })
+# ---
+# name: test_number_snapshot[number.test_number_floor_temperature_offset-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'friendly_name': 'Test Number Floor temperature offset',
+      'max': 6,
+      'min': -6,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 0.1,
+      'unit_of_measurement': <UnitOfTemperature.CELSIUS: '°C'>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_floor_temperature_offset',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '0.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_maximum_slat_angle-entry]
@@ -253,6 +615,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Maximum slat angle',
     'options': dict({
     }),
     'original_device_class': None,
@@ -260,9 +623,10 @@
     'original_name': 'Maximum slat angle',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'slat_max_angle',
-    'unique_id': '00055511EECC-1-10',
+    'unique_id': '00055511EECC-1-9',
     'unit_of_measurement': '°',
   })
 # ---
@@ -281,7 +645,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '75',
+    'state': '75.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_minimum_slat_angle-entry]
@@ -310,6 +674,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Minimum slat angle',
     'options': dict({
     }),
     'original_device_class': None,
@@ -317,9 +682,10 @@
     'original_name': 'Minimum slat angle',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'slat_min_angle',
-    'unique_id': '00055511EECC-1-11',
+    'unique_id': '00055511EECC-1-10',
     'unit_of_measurement': '°',
   })
 # ---
@@ -338,7 +704,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '-75',
+    'state': '-75.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_motion_alarm_delay-entry]
@@ -367,6 +733,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Motion alarm delay',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -374,9 +741,10 @@
     'original_name': 'Motion alarm delay',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'motion_alarm_cancelation_delay',
-    'unique_id': '00055511EECC-1-6',
+    'unique_id': '00055511EECC-1-5',
     'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
   })
 # ---
@@ -425,6 +793,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Polling interval',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -432,9 +801,10 @@
     'original_name': 'Polling interval',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'polling_interval',
-    'unique_id': '00055511EECC-1-8',
+    'unique_id': '00055511EECC-1-7',
     'unit_of_measurement': <UnitOfTime.MINUTES: 'min'>,
   })
 # ---
@@ -454,7 +824,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '30',
+    'state': '30.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_slat_steps-entry]
@@ -483,6 +853,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Slat steps',
     'options': dict({
     }),
     'original_device_class': None,
@@ -490,9 +861,10 @@
     'original_name': 'Slat steps',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'slat_steps',
-    'unique_id': '00055511EECC-1-12',
+    'unique_id': '00055511EECC-1-11',
     'unit_of_measurement': None,
   })
 # ---
@@ -510,7 +882,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '6',
+    'state': '6.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_slat_turn_duration-entry]
@@ -539,6 +911,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Slat turn duration',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -546,9 +919,10 @@
     'original_name': 'Slat turn duration',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'shutter_slat_time',
-    'unique_id': '00055511EECC-1-9',
+    'unique_id': '00055511EECC-1-8',
     'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
   })
 # ---
@@ -568,7 +942,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '1',
+    'state': '1.6',
   })
 # ---
 # name: test_number_snapshot[number.test_number_temperature_offset-entry]
@@ -597,6 +971,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Temperature offset',
     'options': dict({
     }),
     'original_device_class': None,
@@ -604,9 +979,10 @@
     'original_name': 'Temperature offset',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'temperature_offset',
-    'unique_id': '00055511EECC-1-13',
+    'unique_id': '00055511EECC-1-12',
     'unit_of_measurement': <UnitOfTemperature.CELSIUS: '°C'>,
   })
 # ---
@@ -626,6 +1002,126 @@
     'last_reported': <ANY>,
     'last_updated': <ANY>,
     'state': 'unavailable',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_temperature_report_interval-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 32767,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_temperature_report_interval',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Temperature report interval',
+    'options': dict({
+    }),
+    'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
+    'original_icon': None,
+    'original_name': 'Temperature report interval',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'temperature_report_interval',
+    'unique_id': '00055511EECC-1-19',
+    'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
+  })
+# ---
+# name: test_number_snapshot[number.test_number_temperature_report_interval-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'device_class': 'duration',
+      'friendly_name': 'Test Number Temperature report interval',
+      'max': 32767,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 1.0,
+      'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_temperature_report_interval',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '60.0',
+  })
+# ---
+# name: test_number_snapshot[number.test_number_threshold_for_wind_trigger-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': set({
+    }),
+    'area_id': None,
+    'capabilities': dict({
+      'max': 22.5,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 2.5,
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'number',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'number.test_number_threshold_for_wind_trigger',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Threshold for wind trigger',
+    'options': dict({
+    }),
+    'original_device_class': <NumberDeviceClass.WIND_SPEED: 'wind_speed'>,
+    'original_icon': None,
+    'original_name': 'Threshold for wind trigger',
+    'platform': 'homee',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'wind_monitoring_state',
+    'unique_id': '00055511EECC-1-16',
+    'unit_of_measurement': <UnitOfSpeed.METERS_PER_SECOND: 'm/s'>,
+  })
+# ---
+# name: test_number_snapshot[number.test_number_threshold_for_wind_trigger-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      'device_class': 'wind_speed',
+      'friendly_name': 'Test Number Threshold for wind trigger',
+      'max': 22.5,
+      'min': 0,
+      'mode': <NumberMode.AUTO: 'auto'>,
+      'step': 2.5,
+      'unit_of_measurement': <UnitOfSpeed.METERS_PER_SECOND: 'm/s'>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'number.test_number_threshold_for_wind_trigger',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': '5.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_up_movement_duration-entry]
@@ -654,6 +1150,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Up-movement duration',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -661,9 +1158,10 @@
     'original_name': 'Up-movement duration',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'up_time',
-    'unique_id': '00055511EECC-1-14',
+    'unique_id': '00055511EECC-1-13',
     'unit_of_measurement': <UnitOfTime.SECONDS: 's'>,
   })
 # ---
@@ -683,7 +1181,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '57',
+    'state': '57.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_wake_up_interval-entry]
@@ -712,6 +1210,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Wake-up interval',
     'options': dict({
     }),
     'original_device_class': <NumberDeviceClass.DURATION: 'duration'>,
@@ -719,9 +1218,10 @@
     'original_name': 'Wake-up interval',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'wake_up_interval',
-    'unique_id': '00055511EECC-1-15',
+    'unique_id': '00055511EECC-1-14',
     'unit_of_measurement': <UnitOfTime.MINUTES: 'min'>,
   })
 # ---
@@ -741,7 +1241,7 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '600',
+    'state': '600.0',
   })
 # ---
 # name: test_number_snapshot[number.test_number_window_open_sensibility-entry]
@@ -770,6 +1270,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Window open sensibility',
     'options': dict({
     }),
     'original_device_class': None,
@@ -777,9 +1278,10 @@
     'original_name': 'Window open sensibility',
     'platform': 'homee',
     'previous_unique_id': None,
+    'suggested_object_id': None,
     'supported_features': 0,
     'translation_key': 'open_window_detection_sensibility',
-    'unique_id': '00055511EECC-1-7',
+    'unique_id': '00055511EECC-1-6',
     'unit_of_measurement': None,
   })
 # ---
@@ -797,6 +1299,6 @@
     'last_changed': <ANY>,
     'last_reported': <ANY>,
     'last_updated': <ANY>,
-    'state': '3',
+    'state': '3.0',
   })
 # ---

@@ -14,7 +14,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from . import DOMAIN as BMW_DOMAIN, BMWConfigEntry
+from . import DOMAIN, BMWConfigEntry
 from .coordinator import BMWDataUpdateCoordinator
 from .entity import BMWBaseEntity
 
@@ -50,7 +50,9 @@ NUMBER_TYPES: list[BMWSwitchEntityDescription] = [
         is_available=lambda v: v.is_remote_climate_stop_enabled,
         value_fn=lambda v: v.climate.is_climate_on,
         remote_service_on=lambda v: v.remote_services.trigger_remote_air_conditioning(),
-        remote_service_off=lambda v: v.remote_services.trigger_remote_air_conditioning_stop(),
+        remote_service_off=lambda v: (
+            v.remote_services.trigger_remote_air_conditioning_stop()
+        ),
     ),
     BMWSwitchEntityDescription(
         key="charging",
@@ -112,7 +114,7 @@ class BMWSwitch(BMWBaseEntity, SwitchEntity):
             await self.entity_description.remote_service_on(self.vehicle)
         except MyBMWAPIError as ex:
             raise HomeAssistantError(
-                translation_domain=BMW_DOMAIN,
+                translation_domain=DOMAIN,
                 translation_key="remote_service_error",
                 translation_placeholders={"exception": str(ex)},
             ) from ex
@@ -124,7 +126,7 @@ class BMWSwitch(BMWBaseEntity, SwitchEntity):
             await self.entity_description.remote_service_off(self.vehicle)
         except MyBMWAPIError as ex:
             raise HomeAssistantError(
-                translation_domain=BMW_DOMAIN,
+                translation_domain=DOMAIN,
                 translation_key="remote_service_error",
                 translation_placeholders={"exception": str(ex)},
             ) from ex

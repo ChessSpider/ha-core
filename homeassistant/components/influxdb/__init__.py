@@ -302,7 +302,7 @@ def _generate_event_to_json(conf: dict) -> Callable[[Event], dict[str, Any] | No
                 # as string add "_str" postfix to the field key
                 try:
                     json[INFLUX_CONF_FIELDS][key] = float(value)
-                except (ValueError, TypeError):
+                except ValueError, TypeError:
                     new_key = f"{key}_str"
                     new_value = str(value)
                     json[INFLUX_CONF_FIELDS][new_key] = new_value
@@ -338,7 +338,7 @@ def get_influx_connection(  # noqa: C901
     conf, test_write=False, test_read=False
 ) -> InfluxClient:
     """Create the correct influx connection for the API version."""
-    kwargs = {
+    kwargs: dict[str, Any] = {
         CONF_TIMEOUT: TIMEOUT,
     }
     precision = conf.get(CONF_PRECISION)
